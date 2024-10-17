@@ -67,6 +67,7 @@ main{
     padding: 2em 0.5em 0.5em 2em;
     gap: 2em;
     min-height: 89vh;
+    transition: all .5s ease-in-out;
 }
 
 .open{
@@ -74,7 +75,7 @@ main{
 }
 
 .closed{
-    transform: translateX(-100%);
+    transform: translateX(-100vw);
    
 }
 
