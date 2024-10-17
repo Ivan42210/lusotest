@@ -2,12 +2,11 @@
 
 const toggleBtn = document.getElementById('toggle-btn')
 const menu = document.getElementById('menu')
+const menuClass = menu.classList
 
 toggleBtn.addEventListener('click', toggleAction)
 
 function toggleAction(){
-   
-    const menuClass = menu.classList
 
     if(menuClass.contains('closed')){
         menuClass.remove('closed');
@@ -22,6 +21,17 @@ console.log(toggleBtn)
 
 /*drawer function onClick*/
 
-const menuLinks = menu.childNodes;
+const menuLinks = menu.querySelectorAll('a');
+
+menuLinks.forEach((link) =>{
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        menuClass.remove('open');
+        menuClass.add('closed')
+    })
+})
+
+
+
 
 console.log(menuLinks)
